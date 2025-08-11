@@ -43,7 +43,7 @@ function addLogoAndDownload(canvas, downloadBtn) {
 
   // Load logo DIPAYANG (sesuaikan path/logo)
   let logo = new Image();
-  logo.src = "https://bkd.kepahiangkab.go.id/dipayang/assets/img/logo.png"; // ganti dengan logo DIPAYANG asli
+  logo.src = "https://blogger.googleusercontent.com/img/a/AVvXsEg3QdFkAA1gN_OKWFohljNuj3FWvTvYpdyCdfZBHtR1HyLyVpN0bR6TU66lV6X-m5KA1fOKYan6D78PzGcl3Ex0yI1ygqAg9Q2TjSJB4iASAJka9w9E1usoto1CF6wopLbv8vfEa6lZCdiEz074CSAzUlvrag4ShF5VZe_mbwuXMmZ_3K6kJ71xvoaX71M"; // ganti dengan logo DIPAYANG asli
   logo.onload = () => {
     let logoSize = canvas.width * 0.25; // 25% dari ukuran QR
     let x = (canvas.width - logoSize) / 2;
