@@ -1,38 +1,80 @@
 body {
-  font-family: Arial, sans-serif;
-  background: #f7f7f7;
+  font-family: 'Segoe UI', sans-serif;
+  background: linear-gradient(135deg, #000814, #001d3d);
+  color: #e0f0ff;
   text-align: center;
+  min-height: 100vh;
+  margin: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 .container {
+  background: rgba(0, 40, 80, 0.85);
+  padding: 30px;
+  border-radius: 15px;
+  box-shadow: 0 0 20px rgba(0, 140, 255, 0.5);
   max-width: 400px;
-  margin: 50px auto;
-  padding: 20px;
-  background: white;
-  border-radius: 10px;
-  box-shadow: 0 0 10px rgba(0,0,0,0.1);
+  width: 100%;
+}
+
+h1 {
+  margin-bottom: 10px;
+  color: #00b4d8;
+}
+
+p {
+  font-size: 14px;
+  color: #90e0ef;
 }
 
 input {
   width: 90%;
   padding: 10px;
-  margin-bottom: 10px;
+  margin: 15px 0;
   font-size: 16px;
+  border: 2px solid #00b4d8;
+  border-radius: 8px;
+  background: #001d3d;
+  color: #caf0f8;
+}
+
+input::placeholder {
+  color: #90e0ef;
 }
 
 button {
   padding: 10px 20px;
   font-size: 16px;
-  background: #4CAF50;
+  background: #0077b6;
   color: white;
   border: none;
+  border-radius: 8px;
   cursor: pointer;
+  transition: 0.3s;
 }
 
 button:hover {
-  background: #45a049;
+  background: #0096c7;
 }
 
 #qrcode {
   margin-top: 20px;
+  position: relative;
+  display: inline-block;
+}
+
+#download {
+  display: inline-block;
+  margin-top: 15px;
+  padding: 8px 15px;
+  background: #00b4d8;
+  color: #fff;
+  border-radius: 6px;
+  text-decoration: none;
+}
+
+#download:hover {
+  background: #0096c7;
 }
