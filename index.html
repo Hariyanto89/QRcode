@@ -3,18 +3,20 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>QR Code Generator</title>
+  <title>DIPAYANG QR Generator</title>
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
   <div class="container">
-    <h1>QR Code Generator</h1>
-    <input type="text" id="text" placeholder="Masukkan teks atau URL">
+    <h1>DIPAYANG QR Generator</h1>
+    <p>Masukkan teks atau URL untuk membuat QR Code</p>
+    <input type="text" id="text" placeholder="https://contoh.com">
     <button id="generate">Buat QR</button>
     <div id="qrcode"></div>
+    <a id="download" style="display:none;" download="dipayang_qr.png">⬇ Download QR</a>
   </div>
 
-  <!-- QRCode.js -->
+  <!-- Library QRCode.js -->
   <script src="https://cdn.jsdelivr.net/gh/davidshimjs/qrcodejs/qrcode.min.js"></script>
   <script src="script.js"></script>
 </body>
