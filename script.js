@@ -7,17 +7,15 @@ document.getElementById("generate").addEventListener("click", function () {
   downloadBtn.style.display = "none";
 
   if (text) {
-    // Buat QR di canvas
     let qr = new QRCode(qrContainer, {
       text: text,
       width: 200,
       height: 200,
-      colorDark: "#0077b6", // biru DIPAYANG
-      colorLight: "#ffffff",
+      colorDark: "#00b4d8",  // Biru kotak
+      colorLight: "#000000", // Hitam background
       correctLevel: QRCode.CorrectLevel.H
     });
 
-    // Tunggu QR terbentuk, lalu tambahkan logo
     setTimeout(() => {
       let canvas = qrContainer.querySelector("canvas");
       if (!canvas) {
@@ -41,19 +39,19 @@ document.getElementById("generate").addEventListener("click", function () {
 function addLogoAndDownload(canvas, downloadBtn) {
   let ctx = canvas.getContext("2d");
 
-  // Load logo DIPAYANG (sesuaikan path/logo)
   let logo = new Image();
-  logo.src = "https://blogger.googleusercontent.com/img/a/AVvXsEg3QdFkAA1gN_OKWFohljNuj3FWvTvYpdyCdfZBHtR1HyLyVpN0bR6TU66lV6X-m5KA1fOKYan6D78PzGcl3Ex0yI1ygqAg9Q2TjSJB4iASAJka9w9E1usoto1CF6wopLbv8vfEa6lZCdiEz074CSAzUlvrag4ShF5VZe_mbwuXMmZ_3K6kJ71xvoaX71M"; // ganti dengan logo DIPAYANG asli
+  logo.src = "https://bkd.kepahiangkab.go.id/dipayang/assets/img/logo.png"; 
   logo.onload = () => {
-    let logoSize = canvas.width * 0.25; // 25% dari ukuran QR
+    let logoSize = canvas.width * 0.25;
     let x = (canvas.width - logoSize) / 2;
     let y = (canvas.height - logoSize) / 2;
 
-    ctx.fillStyle = "white";
-    ctx.fillRect(x, y, logoSize, logoSize); // background putih untuk logo
+    // Background logo hitam agar menyatu dengan QR
+    ctx.fillStyle = "#000000";
+    ctx.fillRect(x, y, logoSize, logoSize);
+
     ctx.drawImage(logo, x, y, logoSize, logoSize);
 
-    // Tampilkan tombol download
     downloadBtn.href = canvas.toDataURL("image/png");
     downloadBtn.style.display = "inline-block";
   };
